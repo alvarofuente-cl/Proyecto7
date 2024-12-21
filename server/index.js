@@ -3,6 +3,7 @@ const cors = require("cors");
 const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 const path = require("path");
+const jwt = require('jsonwebtoken');
 
 require("dotenv").config();
 const port = process.env.PORT || 3005;
@@ -50,6 +51,7 @@ app.use((req, res, next) => {
     express.json()(req, res, next);
   }
 });
+
 
 app.use("/api/checkout", require("./routes/checkout"));
 app.use("/api/pizzas", require("./routes/pizzas"));

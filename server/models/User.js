@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
   },
   zipcode: {
     type: Number,
-    default: 00000,
+    default: 0o0,
   },
   email: {
     type: String,

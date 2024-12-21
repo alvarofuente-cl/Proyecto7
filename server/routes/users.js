@@ -67,8 +67,7 @@ const authorization = require("../middleware/authorization");
  *               $ref: '#/components/schemas/User'
  */
 
-router.post(
-  "/create",
+router.post("/create",
   [
     check("name", "El nombre es obligatorio.").not().isEmpty(),
     check("email", "Agrega un email válido").isEmail(),

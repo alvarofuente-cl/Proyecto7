@@ -43,15 +43,8 @@ exports.create = async (req, res) => {
       },
     };
 
-    jwt.sign(
-      payload,
-      process.env.SECRET,
-      {
-        expiresIn: 360000,
-      },
-      (error, token) => {
+    jwt.sign(payload, process.env.SECRET, { expiresIn: 360000 }, (error, token) => {
         if (error) throw error;
-
         res.json({
           msg: "Usuario creado con éxito.",
           data: token,
